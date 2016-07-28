@@ -1,153 +1,19 @@
-body {
-    background-color: rgba(251, 247, 238, 1);
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    x -ms-user-select: none;
-    user-select: none;
+canvas {
+    display: block;
+    margin: auto;
 }
 
-label {
-    font-weight: normal;
+.background-canvas {
+    margin-bottom: -600px;
 }
 
-.header {
+.button-group {
+    margin: 10px auto;
     text-align: center;
 }
 
-.show-labels {
-    display: inline;
-    color: gray;
-}
-
-.hide-labels {
-    display: none;
-}
-
-.col-labels {
-    padding: 0 6px;
-    color: gray;
-}
-
-@media (min-width: 500px) {
-    .col-labels {
-        padding: 0 11px;
-    }
-}
-
-@media (min-width: 806px) {
-    .col-labels {
-        padding: 0 16px;
-    }
-}
-
-@media (min-width: 1126px) {
-    .col-labels {
-        padding: 0 26px;
-    }
-}
-
-@media (min-width: 1366px) {
-    .col-labels {
-        padding: 0 33px;
-    }
-}
-
-.row-labels {
-    padding: 10px;
-}
-
-.chess-board-container {
-    margin: 20px;
-}
-
-.king-in-check {
-    animation-name: blinker;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    color: darkRed;
-}
-
-@keyframes blinker {
-    to {
-        opacity: 0;
-    }
-}
-
-.eliminated-piece {
-    background-color: indianRed;
-    border: none;
-    border-bottom-color: white;
-    border-bottom-style: solid;
-    border-radius: 10px;
-    font-size: 100%;
-}
-
-@media (min-width: 500px) {
-    .eliminated-piece {
-        font-size: 125%;
-    }
-}
-
-@media (min-width: 806px) {
-    .eliminated-piece {
-        font-size: 150%;
-    }
-}
-
-@media (min-width: 1126px) {
-    .eliminated-piece {
-        font-size: 200%;
-    }
-}
-
-@media (min-width: 1366px) {
-    .eliminated-piece {
-        font-size: 300%;
-    }
-}
-
-.chess-board-square {
-    width: 20px;
-    height: 20px;
-    margin-left: -1px;
-    border: none;
-    font-size: 100%;
-}
-
-@media (min-width: 500px) {
-    .chess-board-square {
-        width: 30px;
-        height: 30px;
-        font-size: 125%;
-    }
-}
-
-@media (min-width: 806px) {
-    .chess-board-square {
-        width: 40px;
-        height: 40px;
-        font-size: 150%;
-    }
-}
-
-@media (min-width: 1126px) {
-    .chess-board-square {
-        width: 60px;
-        height: 60px;
-        font-size: 200%;
-    }
-}
-
-@media (min-width: 1366px) {
-    .chess-board-square {
-        width: 75px;
-        height: 75px;
-        font-size: 300%;
-    }
+.promotion-btn {
+    min-width: 100px;
 }
 
 .hamburger-menu-icon {
