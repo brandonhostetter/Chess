@@ -1,19 +1,153 @@
-canvas {
-    display: block;
-    margin: auto;
+body {
+    background-color: rgba(251, 247, 238, 1);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    x -ms-user-select: none;
+    user-select: none;
 }
 
-.background-canvas {
-    margin-bottom: -600px;
+label {
+    font-weight: normal;
 }
 
-.button-group {
-    margin: 10px auto;
+.header {
     text-align: center;
 }
 
-.promotion-btn {
-    min-width: 100px;
+.show-labels {
+    display: inline;
+    color: gray;
+}
+
+.hide-labels {
+    display: none;
+}
+
+.col-labels {
+    padding: 0 6px;
+    color: gray;
+}
+
+@media (min-width: 500px) {
+    .col-labels {
+        padding: 0 11px;
+    }
+}
+
+@media (min-width: 806px) {
+    .col-labels {
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 1126px) {
+    .col-labels {
+        padding: 0 26px;
+    }
+}
+
+@media (min-width: 1366px) {
+    .col-labels {
+        padding: 0 33px;
+    }
+}
+
+.row-labels {
+    padding: 10px;
+}
+
+.chess-board-container {
+    margin: 20px;
+}
+
+.king-in-check {
+    animation-name: blinker;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    color: darkRed;
+}
+
+@keyframes blinker {
+    to {
+        opacity: 0;
+    }
+}
+
+.eliminated-piece {
+    background-color: indianRed;
+    border: none;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    border-radius: 10px;
+    font-size: 100%;
+}
+
+@media (min-width: 500px) {
+    .eliminated-piece {
+        font-size: 125%;
+    }
+}
+
+@media (min-width: 806px) {
+    .eliminated-piece {
+        font-size: 150%;
+    }
+}
+
+@media (min-width: 1126px) {
+    .eliminated-piece {
+        font-size: 200%;
+    }
+}
+
+@media (min-width: 1366px) {
+    .eliminated-piece {
+        font-size: 300%;
+    }
+}
+
+.chess-board-square {
+    width: 20px;
+    height: 20px;
+    margin-left: -1px;
+    border: none;
+    font-size: 100%;
+}
+
+@media (min-width: 500px) {
+    .chess-board-square {
+        width: 30px;
+        height: 30px;
+        font-size: 125%;
+    }
+}
+
+@media (min-width: 806px) {
+    .chess-board-square {
+        width: 40px;
+        height: 40px;
+        font-size: 150%;
+    }
+}
+
+@media (min-width: 1126px) {
+    .chess-board-square {
+        width: 60px;
+        height: 60px;
+        font-size: 200%;
+    }
+}
+
+@media (min-width: 1366px) {
+    .chess-board-square {
+        width: 75px;
+        height: 75px;
+        font-size: 300%;
+    }
 }
 
 .hamburger-menu-icon {
@@ -39,9 +173,12 @@ canvas {
     overflow: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    margin-top: 51px;
 }
 
-    .options-menu a, .options-menu span, options-menu label {
+    .options-menu a,
+    .options-menu span,
+    options-menu label {
         padding: 8px 8px 12px 20px;
         text-decoration: none;
         font-size: 18px;
@@ -57,7 +194,8 @@ canvas {
         margin-bottom: 12px;
     }
 
-    .options-menu a:hover, .options-menu span:hover {
+    .options-menu a:hover,
+    .options-menu span:hover {
         color: #f1f1f1;
         cursor: pointer;
     }
@@ -77,9 +215,11 @@ canvas {
     padding: 8px 8px 8px 20px;
     cursor: default;
 }
-        
+
 @media screen and (max-height: 450px) {
-    .options-menu a {font-size: 18px;}
+    .options-menu a {
+        font-size: 18px;
+    }
 }
 
 .toggle-switch {
