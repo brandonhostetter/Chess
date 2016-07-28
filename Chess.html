@@ -1,89 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chess</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <link rel="stylesheet" type="text/css" href="Chess.css">
+    <title>Chess</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="Chess.css">
 </head>
-
 <body>
-	<!-- Options Menu -->
-	<div id="options-side-menu" class="options-menu">
-		<span>
-			<span class="options-menu-header">Options</span>
-			<a href="javascript:void(0)" class="close-menu-btn" onclick="Page.closeOptions()">&times;</a>
-		</span>
-		<label class="toggle-switch" title="The highlights showing valid moves">
-			<span>Highlights</span>
-			<input type="checkbox" checked="checked" onclick="Page.toggleHighlights(event)">
-			<div class="slider"></div>
-		</label>
-		<label class="toggle-switch" title="The animation played when a piece is moved">
-			<span>Animations</span>
-			<input type="checkbox" checked="checked" onclick="Page.toggleAnimations(event)">
-			<div class="slider"></div>
-		</label>
-		<a href="javascript:void(0)" onclick="Page.restartOption()" style="margin-top: -12px;">Restart</a>
-	</div>
-	
-	<div style="margin-bottom: -30px;">
-		<span class="hamburger-menu-icon" onclick="Page.openOptions()">&#9776;</span>
-	</div>
-	<div>
-		<canvas id="chess-background-canvas" width="600" height = "600" class="background-canvas"></canvas>
-		<canvas id="chess-piece-canvas" width="600" height = "600"></canvas>
-		<div class="button-group">
-			<button id="undo-button" class="btn btn-default">Undo</button>
-			<button id="restart-button" class="btn btn-default">Restart</button>
-		</div>
-	</div>
-	
-	<!-- Pawn Promotion Modal -->
-	<div id="promotion-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static">
-		<div class="modal-dialog" style="text-align: center;">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title">Promotion!</h4>
-				</div>
-				<div class="modal-body">
-					<p>What piece would you like to promote your pawn to?</p>
-					<div class="row button-group">
-						<button id="promote-btn-queen" class="btn btn-default promotion-btn">Queen</button>
-					</div>
-					<div class="row button-group">
-						<button id="promote-btn-rook" class="btn btn-default promotion-btn">Rook</button>
-					</div><div class="row button-group">
-						<button id="promote-btn-bishop" class="btn btn-default promotion-btn">Bishop</button>
-					</div>
-					<div class="row button-group">
-						<button id="promote-btn-knight" class="btn btn-default promotion-btn">Knight</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<!-- End Game Modal -->
-	<div id="game-over-modal" class="modal fade" tabindex="-1" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button class="close" data-dismiss="modal"><span>&times;</span></button>
-					<h4 class="modal-title">New Game?</h4>
-				</div>
-				<div class="modal-body">
-					<p>Would you like to start a new game?</p>
-				</div>
-				<div class="modal-footer">
-					<button id="confirm-replay-game" class="btn btn-primary">Yes</button>
-					<button class="btn btn-default" data-dismiss="modal">No</button>
-				</div>
-			</div>
-		</div>
-	</div>
+    <!-- Options Menu -->
+    <div id="options-side-menu" class="options-menu">
+        <span>
+            <span class="options-menu-header">Options</span>
+            <a href="javascript:void(0)" class="close-menu-btn" onclick="Page.closeOptions()">&times;</a>
+        </span>
+        <label class="toggle-switch" title="The highlights showing valid moves">
+            <span>Highlights</span>
+            <input type="checkbox" checked="checked" onclick="Page.toggleHighlights(event)">
+            <div class="slider"></div>
+        </label>
+        <label class="toggle-switch" title="The animation played when a piece is moved">
+            <span>Animations</span>
+            <input type="checkbox" checked="checked" onclick="Page.toggleAnimations(event)">
+            <div class="slider"></div>
+        </label>
+        <a href="javascript:void(0)" onclick="Page.restartOption()" style="margin-top: -12px;">Restart</a>
+    </div>
 
-	<script src="Chess.js"></script>
+    <div style="margin-bottom: -30px;">
+        <span class="hamburger-menu-icon" onclick="Page.openOptions()">&#9776;</span>
+    </div>
+    <div>
+        <canvas id="chess-background-canvas" width="600" height="600" class="background-canvas"></canvas>
+        <canvas id="chess-piece-canvas" width="600" height="600"></canvas>
+        <div class="button-group">
+            <button id="undo-button" class="btn btn-default">Undo</button>
+            <button id="restart-button" class="btn btn-default">Restart</button>
+        </div>
+    </div>
+
+    <!-- Pawn Promotion Modal -->
+    <div id="promotion-modal" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static">
+        <div class="modal-dialog" style="text-align: center;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Promotion!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>What piece would you like to promote your pawn to?</p>
+                    <div class="row button-group">
+                        <button id="promote-btn-queen" class="btn btn-default promotion-btn">Queen</button>
+                    </div>
+                    <div class="row button-group">
+                        <button id="promote-btn-rook" class="btn btn-default promotion-btn">Rook</button>
+                    </div><div class="row button-group">
+                        <button id="promote-btn-bishop" class="btn btn-default promotion-btn">Bishop</button>
+                    </div>
+                    <div class="row button-group">
+                        <button id="promote-btn-knight" class="btn btn-default promotion-btn">Knight</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Game Modal -->
+    <div id="game-over-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal"><span>&times;</span></button>
+                    <h4 class="modal-title">New Game?</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Would you like to start a new game?</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="confirm-replay-game" class="btn btn-primary">Yes</button>
+                    <button class="btn btn-default" data-dismiss="modal">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Chess.js"></script>
 </body>
 </html>
