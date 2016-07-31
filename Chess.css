@@ -39,7 +39,6 @@ canvas {
     overflow: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    margin-top: 51px;
 }
 
     .options-menu a,
